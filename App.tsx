@@ -10,6 +10,8 @@ import {
   Archivo_500Medium,
   Archivo_600SemiBold,
 } from "@expo-google-fonts/archivo";
+import { ThemeProvider } from "styled-components/native";
+import theme from "./src/styles/theme";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,5 +30,9 @@ export default function App() {
     SplashScreen.hideAsync();
   }
 
-  return <Home />;
+  return (
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
+  );
 }
